@@ -1,0 +1,14 @@
+<h1>Places Sabrina Has Traveled</h1>
+
+<div class="row">
+  <% for place in @places %>
+      <h4><%= place["location"] %></h4>
+    </div>
+  <% end %>
+</div>
+
+<p>
+    <a 
+    href="/places/new">Add a new location
+    </a>
+</p>
