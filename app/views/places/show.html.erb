@@ -1,8 +1,20 @@
 
-<h1>Places Sabrina Has Been</h1>
+<h1><%= @place["name"] %></h1>
+
 <h2>
-<% @place["name"] %>
-<h2/>
+<a href="/posts/new?place_id=<%= @place["id"] %>">Create new post for <%= @place["name"]%></a>
+</p>
+
+<ul>
+    <% for post in @posts %>
+        <li>
+            <h3><%= post["title"] %></h3>
+            <%= post["posted_on"] %>
+            <br>
+            <%= post["description"] %>
+        </li>
+    <% end %>
+</ul>
 
 <p>
     <a href="/places">Back to all places</a>
