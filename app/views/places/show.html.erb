@@ -6,15 +6,21 @@
 </p>
 
 <ul>
+  <% if @posts.nil? %>
+    <li>No posts available.</li>
+  <% else %>
     <% for post in @posts %>
-        <li>
-            <h3><%= post["title"] %></h3>
-            <%= post["posted_on"] %>
-            <br>
-            <%= post["description"] %>
-        </li>
+      <li>
+        <h3><%= post["title"] %> </h3>
+        <%= post["posted_on"] %>
+        <br>
+        <%= post["description"] %>
+
+      </li>
     <% end %>
+  <% end %>
 </ul>
+
 
 <p>
     <a href="/places">Back to all places</a>
